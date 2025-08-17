@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TBI English Academy — Speak Confident English</title>
+  <meta name="description" content="Activity-first English coaching with modern UI. Practical sessions, workshops, and confidence-focused learning." />
+  <meta name="theme-color" content="#0b3dbf" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter','system-ui','-apple-system','Segoe UI','Roboto','Arial','sans-serif'] },
+          colors: {
+            brand: { 50:'#eef2ff',100:'#e0e7ff',200:'#c7d2fe',300:'#a5b4fc',400:'#818cf8',500:'#6366f1',600:'#4f46e5',700:'#4338ca',800:'#3730a3',900:'#312e81' }
+          },
+          boxShadow: { soft: '0 10px 30px rgba(2,6,23,0.08)', ring: '0 0 0 8px rgba(99,102,241,0.14)' }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root { --radius:16px }
+    .card { border-radius: var(--radius); background: #fff; border: 1px solid #e5e7eb; box-shadow: 0 6px 24px rgba(2,6,23,.06) }
+    .card-hover { transition: transform .25s ease, box-shadow .25s ease; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 38px rgba(2,6,23,.12) }
+    .pill { border-radius: 9999px }
+    .grad-hero { background: radial-gradient(1200px 600px at 10% -20%, rgba(99,102,241,.25), transparent 60%), radial-gradient(1200px 600px at 90% 0%, rgba(14,165,233,.18), transparent 60%), linear-gradient(180deg, #f8fafc 0%, #ffffff 40%) }
+    .blur-dot { filter: blur(30px); opacity: .3 }
+    .section { scroll-margin-top: 90px }
+    .glass { background: linear-gradient(180deg, rgba(255,255,255,.6), rgba(255,255,255,.35)); backdrop-filter: blur(8px) }
+  </style>
+</head>
+<body class="bg-white text-slate-800 antialiased">
+  <!-- NAV -->
+  <header class="sticky top-0 z-50">
+    <div class="backdrop-blur bg-white/70 border-b border-slate-200/60">
+      <div class="max-w-6xl mx-auto px-5 md:px-6 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <!-- Inline SVG logo -->
+          <svg class="w-11 h-11 rounded-xl" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-label="TBI Logo" role="img">
+            <defs>
+              <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#6366f1"/>
+                <stop offset="100%" stop-color="#06b6d4"/>
+              </linearGradient>
+            </defs>
+            <rect width="120" height="120" rx="20" fill="url(#g)"/>
+            <text x="50%" y="57%" font-size="48" font-weight="800" font-family="Inter, sans-serif" fill="#fff" text-anchor="middle">TBI</text>
+          </svg>
+          <div>
+            <div class="text-base md:text-lg font-extrabold">TBI English Academy</div>
+            <div class="text-[12px] md:text-xs text-slate-500">Confidence - Fluency - Career-ready</div>
+          </div>
+        </div>
+
+        <nav class="hidden md:flex items-center gap-1 text-sm" role="navigation" aria-label="Primary">
+          <a href="#program" class="px-3 py-2 hover:text-slate-900 rounded-md">Program</a>
+          <a href="#sessions" class="px-3 py-2 hover:text-slate-900 rounded-md">Sessions</a>
+          <a href="#pricing" class="px-3 py-2 hover:text-slate-900 rounded-md">Packages</a>
+          <a href="#workshops" class="px-3 py-2 hover:text-slate-900 rounded-md">Workshops</a>
+          <a href="#about" class="px-3 py-2 hover:text-slate-900 rounded-md">About</a>
+          <a href="#enquire" class="px-3 py-2 hover:text-slate-900 rounded-md">Enquire</a>
+          <a href="tel:+918448609498" class="ml-2 pill inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 shadow-soft">📞 Call</a>
+        </nav>
+
+        <div class="md:hidden flex items-center gap-2">
+          <button id="mobileBtn" class="p-2 rounded-lg border border-slate-200 bg-slate-100 hover:bg-slate-200" aria-label="menu">☰</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobileNav" class="md:hidden hidden border-b border-slate-200/70 bg-white/95">
+      <div class="max-w-6xl mx-auto px-5 py-3 grid gap-1 text-sm">
+        <a href="#program" class="px-2 py-2 rounded-md hover:bg-slate-50">Program</a>
+        <a href="#sessions" class="px-2 py-2 rounded-md hover:bg-slate-50">Sessions</a>
+        <a href="#pricing" class="px-2 py-2 rounded-md hover:bg-slate-50">Packages</a>
+        <a href="#workshops" class="px-2 py-2 rounded-md hover:bg-slate-50">Workshops</a>
+        <a href="#about" class="px-2 py-2 rounded-md hover:bg-slate-50">About</a>
+        <a href="#enquire" class="px-2 py-2 rounded-md hover:bg-slate-50">Enquire</a>
+        <a href="tel:+918448609498" class="px-2 py-2 rounded-md text-brand-700">Call: 8448609498</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="grad-hero relative overflow-hidden">
+    <div class="absolute -left-20 -top-10 w-80 h-80 rounded-full bg-brand-300 blur-dot" aria-hidden="true"></div>
+    <div class="absolute -right-20 -top-10 w-80 h-80 rounded-full bg-cyan-300 blur-dot" aria-hidden="true"></div>
+
+    <div class="max-w-6xl mx-auto px-5 md:px-6 py-14 md:py-20 grid md:grid-cols-12 gap-8 items-center">
+      <div class="md:col-span-7">
+        <span class="inline-flex items-center gap-2 bg-white/70 text-slate-800 px-3 py-1 pill text-xs font-semibold">● Activity-first English</span>
+        <h1 class="mt-4 text-3xl md:text-5xl font-extrabold leading-tight">Speak English confidently — <span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-600 to-cyan-500">in real life</span></h1>
+        <p class="mt-4 text-slate-600 max-w-xl">Practical 90-minute sessions focused on speaking, listening, and workplace communication—role plays, mock interviews, debates, and recorded feedback.</p>
+
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="#enquire" class="pill inline-flex items-center gap-2 bg-gradient-to-r from-brand-600 to-cyan-500 hover:from-brand-700 hover:to-cyan-600 text-white px-5 py-3 shadow-soft">Book Free Demo</a>
+          <a href="#sessions" class="pill inline-flex items-center gap-2 border border-slate-200 text-slate-800 px-4 py-3 hover:shadow">View Timings</a>
+        </div>
+
+        <!-- Animated counters -->
+        <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
+          <div class="card p-4 text-slate-700"><div class="text-xs text-slate-500">Learners</div><div class="font-extrabold text-2xl"><span class="counter" data-target="500">0</span>+</div></div>
+          <div class="card p-4 text-slate-700"><div class="text-xs text-slate-500">Sessions</div><div class="font-extrabold text-2xl"><span class="counter" data-target="150">0</span>+</div></div>
+          <div class="card p-4 text-slate-700"><div class="text-xs text-slate-500">Workshops</div><div class="font-extrabold text-2xl"><span class="counter" data-target="10">0</span>+</div></div>
+        </div>
+      </div>
+
+      <div class="md:col-span-5">
+        <div class="glass card p-6 card-hover">
+          <div class="flex items-start gap-4">
+            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-brand-600 to-cyan-600 text-white grid place-items-center text-lg font-extrabold">T</div>
+            <div>
+              <div class="text-xs text-slate-500">Visit Us</div>
+              <div class="font-semibold text-slate-900">4649/32A, Street No. 2, Budh Bazaar, New Modern, Shahdara, Delhi</div>
+            </div>
+          </div>
+
+          <div class="mt-4 rounded-lg overflow-hidden border border-slate-100">
+            <iframe title="TBI location map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.566578569767!2d77.29052231508365!3d28.675381982401194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfb4d15d1e3d1%3A0x2a0dc9b77b2b2c8f!2sBudh%20Bazaar%2C%20Shahdara%2C%20Delhi%2C%20110032!5e0!3m2!1sen!2sin!4v1692199823798!5m2!1sen!2sin" width="100%" height="200" style="border:0" loading="lazy" allowfullscreen></iframe>
+          </div>
+
+          <div class="mt-4 flex gap-2">
+            <a href="tel:+918448609498" class="flex-1 pill inline-flex items-center justify-center gap-3 bg-brand-600 hover:bg-brand-700 text-white px-4 py-2">📞 Call</a>
+            <a href="https://wa.me/918448609498" target="_blank" rel="noopener noreferrer" class="flex-1 pill inline-flex items-center justify-center gap-3 bg-white border border-slate-200 text-slate-800 px-4 py-2">💬 WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="max-w-6xl mx-auto px-5 md:px-6 -mt-10">
+    <!-- PROGRAM -->
+    <section id="program" class="section py-12">
+      <div class="grid md:grid-cols-3 gap-6 items-start">
+        <div class="md:col-span-2 card p-6 card-hover">
+          <h2 class="text-2xl font-bold">Why our facilitation works</h2>
+          <p class="mt-3 text-slate-600">Activity-based facilitation—presentations, role plays, games, and peer feedback—builds real speaking skills faster than passive listening.</p>
+          <div class="mt-4 flex gap-2 flex-wrap">
+            <span class="px-3 py-1 pill bg-brand-50 text-brand-700 font-semibold">Small groups</span>
+            <span class="px-3 py-1 pill bg-amber-50 text-amber-700 font-semibold">Hands-on</span>
+            <span class="px-3 py-1 pill bg-emerald-50 text-emerald-700 font-semibold">Supportive</span>
+            <span class="px-3 py-1 pill bg-indigo-50 text-indigo-700 font-semibold">All levels</span>
+          </div>
+        </div>
+        <aside class="card p-6 bg-gradient-to-b from-white to-slate-50 border-slate-200/80">
+          <h3 class="font-semibold">Quick facts</h3>
+          <ul class="mt-3 text-slate-700 space-y-2">
+            <li><strong>Duration:</strong> 90 minutes</li>
+            <li><strong>Modes:</strong> Classroom, Online (8–12), 1:1</li>
+            <li><strong>Special:</strong> Women-only & Kids</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- SESSIONS -->
+    <section id="sessions" class="section py-10">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-2xl font-bold">Session Timings</h2>
+        <span class="text-xs text-slate-500">Timezone: IST</span>
+      </div>
+      <p class="text-slate-600 mb-4">Choose a 90-minute slot that fits the schedule.</p>
+      <div class="overflow-x-auto rounded-2xl border border-slate-200">
+        <table class="min-w-full table-auto text-sm">
+          <thead class="bg-white sticky top-0">
+            <tr>
+              <th class="text-left px-4 py-3 font-semibold">Session</th>
+              <th class="text-left px-4 py-3 font-semibold">Duration</th>
+              <th class="text-left px-4 py-3 font-semibold">Time</th>
+              <th class="text-left px-4 py-3 font-semibold">Best for</th>
+            </tr>
+          </thead>
+          <tbody class="bg-white/80">
+            <tr class="border-t"><td class="px-4 py-3">1</td><td class="px-4 py-3">90 min</td><td class="px-4 py-3">7:30–9:00 AM</td><td class="px-4 py-3">Working professionals</td></tr>
+            <tr class="border-t bg-slate-50"><td class="px-4 py-3">2</td><td class="px-4 py-3">90 min</td><td class="px-4 py-3">9:05–10:35 AM</td><td class="px-4 py-3">Homemakers/Students</td></tr>
+            <tr class="border-t"><td class="px-4 py-3">3</td><td class="px-4 py-3">90 min</td><td class="px-4 py-3">10:40–12:10 PM</td><td class="px-4 py-3">Homemakers/Students</td></tr>
+            <tr class="border-t bg-slate-50"><td class="px-4 py-3">4</td><td class="px-4 py-3">90 min</td><td class="px-4 py-3">12:40–2:10 PM</td><td class="px-4 py-3">Women-only</td></tr>
+            <tr class="border-t"><td class="px-4 py-3">5</td><td class="px-4 py-3">90 min</td><td class="px-4 py-3">2:15–3:45 PM</td><td class="px-4 py-3">Children</td></tr>
+            <tr class="border-t bg-slate-50"><td class="px-4 py-3">6</td><td class="px-4 py-3">90 min</td><td class="px-4 py-3">3:50–5:20 PM</td><td class="px-4 py-3">Students</td></tr>
+            <tr class="border-t"><td class="px-4 py-3">7</td><td class="px-4 py-3">90 min</td><td class="px-4 py-3">5:25–6:55 PM</td><td class="px-4 py-3">Students</td></tr>
+            <tr class="border-t bg-slate-50"><td class="px-4 py-3">8</td><td class="px-4 py-3">90 min</td><td class="px-4 py-3">7:00–8:30 PM</td><td class="px-4 py-3">Working professionals</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" class="section py-12">
+      <h2 class="text-2xl font-bold mb-4">Packages</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="card p-6 card-hover">
+          <div class="text-sm text-slate-500">Starter</div>
+          <div class="mt-2 font-extrabold text-2xl">₹2,499</div>
+          <div class="text-sm text-slate-600 mt-2">8 classes -  Activity-based -  Group feedback</div>
+          <ul class="mt-3 list-disc pl-5 text-slate-600 space-y-1">
+            <li>Small groups (6–10)</li><li>Recorded practice</li><li>Weekly assignments</li>
+          </ul>
+          <div class="mt-4"><button class="w-full pill bg-brand-600 hover:bg-brand-700 text-white px-4 py-2">Enroll</button></div>
+        </div>
+
+        <div class="card p-6 card-hover relative">
+          <span class="absolute -top-3 right-4 pill bg-amber-400 text-black text-xs font-bold px-3 py-1 shadow">Popular</span>
+          <div class="text-sm text-slate-500">Pro</div>
+          <div class="mt-2 font-extrabold text-2xl">₹4,999</div>
+          <div class="text-sm text-slate-600 mt-2">16 classes -  Mock interviews -  Workshop access</div>
+          <ul class="mt-3 list-disc pl-5 text-slate-600 space-y-1">
+            <li>Pro-level practice</li><li>1:1 correction slots</li><li>Career workshop</li>
+          </ul>
+          <div class="mt-4"><button class="w-full pill bg-amber-400 hover:brightness-95 text-black px-4 py-2">Enroll</button></div>
+        </div>
+
+        <div class="card p-6 card-hover">
+          <div class="text-sm text-slate-500">Premium</div>
+          <div class="mt-2 font-extrabold text-2xl">₹9,999</div>
+          <div class="text-sm text-slate-600 mt-2">Monthly -  Unlimited practice -  1:1 coaching</div>
+          <ul class="mt-3 list-disc pl-5 text-slate-600 space-y-1">
+            <li>Unlimited classes</li><li>Priority 1:1</li><li>Interview & accent coaching</li>
+          </ul>
+          <div class="mt-4"><button class="w-full pill border border-slate-200 px-4 py-2">Contact Us</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORKSHOPS -->
+    <section id="workshops" class="section py-12">
+      <h2 class="text-2xl font-bold mb-4">Career Workshops</h2>
+      <div class="grid md:grid-cols-3 gap-4">
+        <div class="card p-5 card-hover">
+          <h3 class="font-semibold">Improve Communication at Work</h3>
+          <ul class="mt-2 list-disc pl-5 text-slate-600">
+            <li>Clarity and conciseness</li><li>Active listening & empathy</li><li>Constructive feedback</li>
+          </ul>
+        </div>
+        <div class="card p-5 card-hover">
+          <h3 class="font-semibold">Conflict Management & EQ</h3>
+          <ul class="mt-2 list-disc pl-5 text-slate-600">
+            <li>Perspective taking</li><li>Open communication</li><li>Emotion regulation</li>
+          </ul>
+        </div>
+        <div class="card p-5 card-hover">
+          <h3 class="font-semibold">Leadership & Coaching</h3>
+          <ul class="mt-2 list-disc pl-5 text-slate-600">
+            <li>Situational leadership</li><li>Clear communication</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="section py-12">
+      <h2 class="text-2xl font-bold mb-4">Student Success Stories</h2>
+      <div class="overflow-x-auto flex gap-4 py-2">
+        <div class="min-w-[320px] card p-6 card-hover">
+          <p class="text-slate-600">“TBI improved my confidence in interviews. The role plays made me think on my feet.”</p>
+          <div class="mt-4 font-semibold">— Asha, Software Engineer</div>
+        </div>
+        <div class="min-w-[320px] card p-6 card-hover">
+          <p class="text-slate-600">“The women-only batch was supportive and I made real progress in two months.”</p>
+          <div class="mt-4 font-semibold">— Neha, Homemaker</div>
+        </div>
+        <div class="min-w-[320px] card p-6 card-hover">
+          <p class="text-slate-600">“Mock interviews and feedback helped me crack my campus placement.”</p>
+          <div class="mt-4 font-semibold">— Rohan, Student</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section py-12">
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="card p-6 card-hover">
+          <h2 class="text-2xl font-bold">About the Academy</h2>
+          <p class="mt-3 text-slate-600">Practical spoken English with activities that create real speaking opportunities. Emphasis on confidence, listening, and workplace-readiness.</p>
+          <ul class="mt-4 list-disc pl-5 text-slate-600">
+            <li>Activity-based facilitation</li><li>Recorded practice & feedback</li><li>Workplace communication focus</li>
+          </ul>
+        </div>
+        <div class="card p-6 card-hover">
+          <h3 class="font-semibold">Founders</h3>
+          <p class="mt-2 text-slate-600"><strong>Deepa Singh</strong> — International Certified Career Coach</p>
+          <p class="mt-2 text-slate-600"><strong>Rohit Verma</strong> — Founder & Language/Accent Coach</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ENQUIRE -->
+    <section id="enquire" class="section py-12">
+      <div class="card p-6 card-hover">
+        <h2 class="text-2xl font-bold">Request a Callback / Free Demo</h2>
+        <p class="text-slate-600 mt-2">Leave details — we’ll call to schedule a free demo.</p>
+        <form id="leadForm" action="https://formspree.io/f/xeoznrqv" method="POST" class="mt-4 grid md:grid-cols-3 gap-3">
+          <input name="name" placeholder="Your name" class="p-3 border rounded-lg" required>
+          <input name="phone" placeholder="10-digit mobile" pattern="[6-9][0-9]{9}" class="p-3 border rounded-lg" required>
+          <select name="preferred_slot" class="p-3 border rounded-lg">
+            <option>Morning</option><option>Afternoon</option><option>Evening</option>
+          </select>
+          <textarea name="notes" rows="3" class="p-3 border rounded-lg md:col-span-3" placeholder="Any message (optional)"></textarea>
+          <div class="md:col-span-3 flex gap-3">
+            <button type="submit" class="pill bg-brand-600 hover:bg-brand-700 text-white px-5 py-3">Submit</button>
+            <button type="button" id="newsletterBtn" class="pill border border-slate-200 px-5 py-3 hover:shadow">Subscribe to updates</button>
+          </div>
+        </form>
+        <p id="successMsg" class="hidden text-emerald-500 mt-3">✅ Thank you! We’ll contact you soon.</p>
+        <p class="text-sm text-slate-500 mt-4">
+          Or call: <a href="tel:+918448609498" class="text-brand-600">8448609498</a> |
+          Email: <a href="mailto:thebetterindian.edu@gmail.com" class="text-brand-600">thebetterindian.edu@gmail.com</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Sticky Mobile CTA bar -->
+  <div class="fixed inset-x-0 bottom-0 z-50 md:hidden">
+    <div class="mx-3 mb-3 rounded-2xl bg-white/90 border border-slate-200 shadow-soft p-2 flex items-center gap-2">
+      <a href="#enquire" class="flex-1 pill bg-gradient-to-r from-brand-600 to-cyan-500 text-white px-4 py-3 text-center">Book Free Demo</a>
+      <a href="tel:+918448609498" class="pill bg-white border border-slate-200 px-4 py-3">📞</a>
+      <a href="https://wa.me/918448609498" target="_blank" rel="noopener noreferrer" class="pill bg-white border border-slate-200 px-4 py-3">💬</a>
+    </div>
+  </div>
+
+  <!-- FLOATING ACTIONS (desktop) -->
+  <div class="hidden md:flex fixed right-5 bottom-5 z-40 flex-col gap-3">
+    <a href="tel:+918448609498" class="bg-brand-600 hover:bg-brand-700 text-white p-4 rounded-full shadow-soft" aria-label="Call">📞</a>
+    <a href="https://wa.me/918448609498" target="_blank" rel="noopener noreferrer" class="bg-white p-4 rounded-full shadow border hover:shadow-soft" aria-label="WhatsApp">💬</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="mt-16 bg-slate-950 text-white">
+    <div class="max-w-6xl mx-auto px-5 md:px-6 py-10 grid md:grid-cols-3 gap-6">
+      <div>
+        <div class="text-xl font-extrabold">TBI English Academy</div>
+        <div class="text-sm text-slate-400 mt-2">Activity-first English coaching - Speak Confident English</div>
+      </div>
+      <div>
+        <div class="text-sm font-semibold mb-2">Contact</div>
+        <div class="text-sm">Call: <a class="text-amber-300" href="tel:+918448609498">8448609498</a></div>
+        <div class="text-sm mt-1">Email: <a class="text-amber-300" href="mailto:thebetterindian.edu@gmail.com">thebetterindian.edu@gmail.com</a></div>
+      </div>
+      <div>
+        <div class="text-sm font-semibold mb-2">Address</div>
+        <div class="text-sm">4649/32A, Street No. 2, Budh Bazaar, New Modern, Shahdara, Delhi</div>
+      </div>
+    </div>
+    <div class="border-t border-white/10">
+      <div class="max-w-6xl mx-auto px-5 md:px-6 py-4 text-xs text-slate-400">© 2025 TBI English Academy</div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav
+    const mobileBtn = document.getElementById('mobileBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    if (mobileBtn) mobileBtn.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
+
+    // Lead form (Formspree)
+    const leadForm = document.getElementById('leadForm');
+    const successMsg = document.getElementById('successMsg');
+    if (leadForm) {
+      leadForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const form = e.target;
+        try {
+          const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' }});
+          if (res.ok) {
+            form.reset();
+            successMsg.classList.remove('hidden');
+            successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          } else {
+            alert('Something went wrong. Please try again.');
+          }
+        } catch(err) {
+          alert('Error: ' + err);
+        }
+      });
+    }
+
+    // Animated counters (IntersectionObserver + rAF)
+    function animateCounter(el) {
+      const target = parseInt(el.getAttribute('data-target'), 10) || 0;
+      let start = 0;
+      const duration = 1200;
+      const startTime = performance.now();
+      function tick(now) {
+        const p = Math.min((now - startTime) / duration, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        const val = Math.floor(start + (target - start) * eased);
+        el.textContent = val.toLocaleString();
+        if (p < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    }
+    const counters = document.querySelectorAll('.counter');
+    if ('IntersectionObserver' in window && counters.length) {
+      const io = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateCounter(entry.target);
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.4 });
+      counters.forEach(c => io.observe(c));
+    } else {
+      counters.forEach(animateCounter);
+    }
+  </script>
+</body>
+</html>
